@@ -1,0 +1,49 @@
+{
+    "template": "*",
+    "settings": {
+        "index": {
+            "analysis": {
+                "analyzer": {
+                    "default": {
+                        "type": "custom",
+                        "tokenizer": "standard",
+                        "filter": ["standard",
+                                   "lowercase",
+                                   "stop",
+                                   "stemmer"]
+                    }
+                }
+            }
+        }
+    },
+    "mappings": {
+        "asset": {
+            "properties": {
+                "docbook-id": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "docbook-intro": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "rdf-type": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "rdf-subject": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "rdf-title-or-label": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "content": {
+                    "type": "string",
+                    "index": "analyzed"
+                }
+            }
+        }
+    }
+}
